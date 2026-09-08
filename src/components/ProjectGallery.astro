@@ -1,16 +1,19 @@
 ---
+const base = import.meta.env.BASE_URL;
+const formatPath = (path) => `${base.replace(/\/$/, '')}${path}`;
+
 const projectImages = [
   {
     title: "Diseño e Instalación de Iluminación LED Comercial",
     category: "Iluminación & Eficiencia",
     description: "Proyecto de iluminación de alta potencia y bajo consumo para espacios comerciales e industriales.",
-    imageSrc: "/images/luces.jpg"
+    imageSrc: formatPath("/images/luces.jpg")
   },
   {
     title: "Acabados Eléctricos y Control Lumínico",
     category: "Especialidades Eléctricas",
     description: "Detalle de instalación arquitectónica y distribución de puntos de luz en proyecto corporativo.",
-    imageSrc: "/images/luces-1.jpg"
+    imageSrc: formatPath("/images/luces-1.jpg")
   }
 ];
 ---
