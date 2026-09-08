@@ -1,0 +1,102 @@
+---
+const projectVideos = [
+  {
+    title: "Montaje de Subestación y Panel Principal",
+    category: "Eléctrica",
+    description: "Supervisión, armado y cableado de alta potencia para centro logístico industrial de 5,000 m².",
+    videoSrc: "/videos/proyecto-electrico-1.mp4"
+  },
+  {
+    title: "Sistema de Climatización VRF Centralizado",
+    category: "Climatización",
+    description: "Instalación de unidades modulares super eficientes con bajo consumo energético para torre corporativa.",
+    videoSrc: "/videos/proyecto-electrico-2.mp4"
+  },
+  {
+    title: "Instalación de Cuarto Frío e Infraestructura Industrial",
+    category: "Refrigeración",
+    description: "Montaje de paneles aislantes y unidades de refrigeración con monitoreo de temperatura en tiempo real.",
+    videoSrc: "/videos/proyecto-electrico-3.mp4"
+  },
+  {
+    title: "Inyección y Extracción de Aire Mecánico",
+    category: "Ventilación",
+    description: "Inyección y extracción mecánica de aire para nave de producción con filtración de alta eficiencia.",
+    videoSrc: "/videos/proyecto-electrico-4.mp4"
+  },
+  {
+    title: "Fiscalización y Supervisión Eléctrica en Obra",
+    category: "Supervisión",
+    description: "Pruebas de continuidad, balanceo de cargas y auditoría técnica de seguridad en complejo comercial.",
+    videoSrc: "/videos/proyecto-electrico-5.mp4"
+  },
+  {
+    title: "Automatización y Control de Iluminación",
+    category: "Iluminación",
+    description: "Integración de sistema inteligente de control de cargas e iluminación LED comercial de alto rendimiento.",
+    videoSrc: "/videos/proyecto-electrico-6.mp4"
+  },
+  {
+    title: "Sistema de Puesta a Tierra y Protección Atmosférica",
+    category: "Eléctrica",
+    description: "Instalación de red de tierra física y pararrayos de última generación para planta de telecomunicaciones.",
+    videoSrc: "/videos/proyecto-electrico-7.mp4"
+  },
+  {
+    title: "Modernización e Izaje de Equipos Chillers",
+    category: "Climatización",
+    description: "Maniobra de izaje e integración de nuevos equipos de aire acondicionado sin interrupción de operaciones.",
+    videoSrc: "/videos/proyecto-electrico-8.mp4"
+  },
+  {
+    title: "Mantenimiento y Diagnóstico Termográfico Preventivo",
+    category: "Mantenimiento",
+    description: "Inspección termográfica infrarroja en tableros de transferencia para prevenir fallas térmicas y cortocircuitos.",
+    videoSrc: "/videos/proyecto-electrico-9.mp4"
+  },
+  {
+    title: "Diseño Eléctrico y Planificación de Cargas",
+    category: "Diseño",
+    description: "Modelado y planificación técnica integral para proyecto residencial y comercial multifamiliar.",
+    videoSrc: "/videos/proyecto-electrico-10.mp4"
+  }
+];
+---
+
+<section id="proyectos-videos" class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800/80">
+  <div class="text-center max-w-2xl mx-auto mb-16">
+    <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Demostración Técnica</span>
+    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl mt-2">Proyectos Ejecutados en Video</h2>
+    <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm">Explora una muestra de nuestras ejecuciones en electricidad, climatización y supervisión en obra.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    {projectVideos.map((project) => (
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/50 shadow-sm dark:shadow-none transition flex flex-col justify-between">
+        <!-- Video Player -->
+        <div class="relative bg-black aspect-video w-full overflow-hidden">
+          <video
+            src={project.videoSrc}
+            controls
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            class="w-full h-full object-cover"
+          >
+            Tu navegador no soporta reproducción de video HTML5.
+          </video>
+        </div>
+
+        <!-- Description -->
+        <div class="p-6">
+          <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 px-3 py-1 rounded-full">
+            {project.category}
+          </span>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-4">{project.title}</h3>
+          <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{project.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,50 @@
+---
+const values = [
+  {
+    title: "Calidad",
+    desc: "Trabajamos con altos estándares de calidad, procurando que cada proyecto cumpla con las expectativas y necesidades de nuestros clientes."
+  },
+  {
+    title: "Experiencia",
+    desc: "Nuestros 37 años de trayectoria en el mercado nos permiten aportar conocimiento, capacidad técnica y soluciones eficientes a cada proyecto."
+  },
+  {
+    title: "Responsabilidad",
+    desc: "Asumimos cada compromiso con seriedad, cumpliendo con los acuerdos establecidos y procurando siempre la satisfacción del cliente."
+  },
+  {
+    title: "Profesionalismo",
+    desc: "Contamos con una visión técnica y profesional orientada a ofrecer soluciones seguras, eficientes y adecuadas para cada necesidad."
+  },
+  {
+    title: "Integridad",
+    desc: "Actuamos con honestidad, transparencia y respeto, construyendo relaciones comerciales basadas en la confianza."
+  },
+  {
+    title: "Innovación",
+    desc: "Buscamos mantenernos actualizados e incorporar nuevas tecnologías y métodos que permitan mejorar nuestros servicios y resultados."
+  }
+];
+---
+
+<section class="py-20 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800/80 px-6 transition-colors">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Principios Fundamentales</span>
+      <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl mt-2 transition-colors">Nuestros Valores</h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm transition-colors">Los pilares sobre los cuales construimos cada relación y ejecutamos cada proyecto.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {values.map((v) => (
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 p-6 rounded-2xl hover:border-blue-500/50 shadow-sm dark:shadow-none transition duration-300">
+          <div class="w-10 h-10 bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold mb-4 transition-colors">
+            ✓
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white transition-colors">{v.title}</h3>
+          <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm leading-relaxed transition-colors">{v.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

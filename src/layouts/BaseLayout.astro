@@ -1,0 +1,134 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title = "Riisa | Representaciones Internacionales e Industriales, S.R.L.", 
+  description = "Especialistas en instalaciones eléctricas, climatización, refrigeración y supervisión de proyectos con 37 años de trayectoria." 
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Prevent Theme Flash Script -->
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
+
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+
+  <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between transition-colors duration-300">
+    
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800 transition-colors">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        
+        <!-- Branding -->
+        <a href="/" class="flex flex-col group">
+          <span class="text-2xl font-black tracking-wider text-blue-600 dark:text-blue-500 uppercase">
+            RII<span class="text-slate-900 dark:text-white">SA</span>
+          </span>
+          <span class="text-[9px] text-slate-500 dark:text-slate-400 font-medium tracking-tight -mt-1 hidden sm:block">
+            Representaciones Internacionales e Industriales, S.R.L.
+          </span>
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-700 dark:text-slate-300">
+          <a href="#nosotros" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Nosotros</a>
+          <a href="#servicios" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Servicios</a>
+          <a href="#proyectos-videos" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Proyectos</a>
+          <a href="#contacto" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contacto</a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <!-- Day / Night Mode Toggle Button -->
+          <button
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme"
+            class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 transition"
+          >
+            <!-- Sun Icon (shown in dark mode) -->
+            <svg id="sunIcon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <!-- Moon Icon (shown in light mode) -->
+            <svg id="moonIcon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+
+          <!-- Action Button -->
+          <a href="#contacto" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition shadow-sm">
+            Cotizar Proyecto
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 transition-colors">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-slate-600 dark:text-slate-400 text-sm">
+        <div>
+          <h3 class="text-slate-900 dark:text-white font-bold text-xl">RIISA</h3>
+          <p class="text-xs text-blue-600 dark:text-blue-400 font-medium mb-3">Representaciones Internacionales e Industriales, S.R.L.</p>
+          <p class="text-xs leading-relaxed">
+            Especialistas en instalaciones eléctricas, sistemas de aire acondicionado, refrigeración, diseño y supervisión de proyectos con 37 años de experiencia.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-semibold mb-3">Servicios Principales</h4>
+          <ul class="space-y-2 text-xs">
+            <li>Instalaciones Eléctricas Industriales</li>
+            <li>Climatización y Sistemas VRF</li>
+            <li>Refrigeración Comercial</li>
+            <li>Diseño y Supervisión de Proyectos</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-semibold mb-3">Contacto Directo</h4>
+          <p class="text-xs">Email: pelayo0589@gmail.com</p>
+          <p class="text-xs mt-1">Atención personalizada y asesoría técnica.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toggle Theme Script -->
+    <script>
+      const toggle = document.getElementById('themeToggle');
+      toggle?.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+    </script>
+  </body>
+</html>
