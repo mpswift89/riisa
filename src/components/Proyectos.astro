@@ -1,0 +1,171 @@
+---
+// Componente de Portafolio Completo de Proyectos RIISA
+const projects = [
+  // --- TORRES & RESIDENCIAL ---
+  { name: "Torre Civil T4", category: "torres", services: "Ventilación de Sótanos, Extracción de CO, Pre-instalaciones de A/C", tag: "Torres Residenciales" }, //[cite: 1]
+  { name: "Torre Oceance", category: "torres", services: "Extracción e Inyección en Parqueos, Pre-instalación A/C", tag: "Torres Residenciales" }, //[cite: 1]
+  { name: "Torre Arai", category: "torres", services: "Extracción e Inyección en Parqueos, Pre-instalación A/C", tag: "Torres Residenciales" }, //[cite: 1]
+  { name: "Torre Juan Carlos X", category: "torres", services: "Extracción e Inyección en Parqueos, Pre-instalación A/C", tag: "Torres Residenciales" }, //[cite: 1]
+  { name: "Veranes Residence / Veranes Park", category: "torres", services: "Ventilación, Extracción de CO y Aire Acondicionado", tag: "Torres Residenciales" }, //[cite: 1]
+  { name: "Torre Bella Viera", category: "torres", services: "Extracción e Inyección en Parqueos, Pre-instalación A/C", tag: "Torres Residenciales" }, //[cite: 1]
+  { name: "Torre Civil Tower #3", category: "torres", services: "Aire Acondicionado", tag: "Torres Residenciales" }, //[cite: 1]
+  { name: "Torre Sky I", category: "torres", services: "Aire Acondicionado", tag: "Torres Residenciales" }, //[cite: 1]
+  { name: "Torres Piantini / Paseo del Retiro / GVI", category: "torres", services: "Instalaciones Eléctricas y Climatización", tag: "Torres Residenciales" }, //[cite: 1]
+  { name: "Torres Blue I / Sonora / Fuenlabrada / Seminario", category: "torres", services: "Instalaciones Eléctricas y Aire Acondicionado", tag: "Torres Residenciales" }, //[cite: 1]
+
+  // --- BANCA & CORPORATIVO ---
+  { name: "Banco del Progreso (Oficina Principal y +20 Sucursales)", category: "banca", services: "Climatización e Instalaciones Eléctricas Nacionales", tag: "Sector Financiero" }, //[cite: 1]
+  { name: "Banco BDI (Plaza Central, Megacentro, Ágora, Naco, Downtown)", category: "banca", services: "Aire Acondicionado e Instalaciones Eléctricas", tag: "Sector Financiero" }, //[cite: 1]
+  { name: "Banreservas (Piedra Blanca)", category: "banca", services: "Instalaciones Eléctricas y Aire Acondicionado", tag: "Sector Financiero" }, //[cite: 1]
+  { name: "Edificios Seguros / Proseguros / Seguros Bancalaris", category: "banca", services: "Climatización e Infraestructura Eléctrica", tag: "Corporativo" }, //[cite: 1]
+  { name: "Oficinas Nestlé / EDOM / Cortes & Hermanos", category: "banca", services: "Ingeniería Eléctrica y Aire Acondicionado", tag: "Corporativo" }, //[cite: 1]
+  { name: "Call Center Laurus / Oficinas Helidosa / OFIT", category: "banca", services: "Climatización y Potencia Eléctrica", tag: "Corporativo" }, //[cite: 1]
+
+  // --- RETAIL & TIENDAS COMERCIALES ---
+  { name: "Tiendas Adidas / Victoria's Secret (Ágora, Downtown, Santiago)", category: "retail", services: "Electricidad y Climatización", tag: "Comercial & Retail" }, //[cite: 1]
+  { name: "LC Waikiki (Galería 360 y Megacentro)", category: "retail", services: "Instalaciones Eléctricas y Aire Acondicionado", tag: "Comercial & Retail" }, //[cite: 1]
+  { name: "Cadena Sport Line / Nike Store / Nike Kids", category: "retail", services: "Climatización e Instalaciones Eléctricas en Mall", tag: "Comercial & Retail" }, //[cite: 1]
+  { name: "American Eagle Outfitters / Calvin Klein / Tommy Hilfiger / Polo", category: "retail", services: "Electricidad y Aire Acondicionado", tag: "Comercial & Retail" }, //[cite: 1]
+  { name: "Starbucks Santiago / Pine Apple / B&B Megacentro", category: "retail", services: "Electricidad y Sistemas de Aire Acondicionado", tag: "Comercial & Gastronomía" }, //[cite: 1]
+  { name: "La Novia de Villa / El Mundo del Juguete", category: "retail", services: "Aire Acondicionado e Instalaciones Eléctricas", tag: "Comercial & Retail" }, //[cite: 1]
+
+  // --- INSTITUCIONAL & GUBERNAMENTAL ---
+  { name: "Nuevo Edificio del Senado de la República", category: "institucional", services: "Sistemas de Aire Acondicionado", tag: "Gubernamental" }, //[cite: 1]
+  { name: "Edificios del Complejo Olímpico (Pabellón Esgrima, Deporte, Museo)", category: "institucional", services: "Climatización e Instalaciones Eléctricas", tag: "Infraestructura Pública" }, //[cite: 1]
+  { name: "Oficina Principal de Aduanas / Ministerio de Obras Públicas", category: "institucional", services: "Sistemas de Climatización Corporativa", tag: "Gubernamental" }, //[cite: 1]
+  { name: "Centros de Cómputos del CEA (7 Sedes)", category: "institucional", services: "Electricidad y Climatización de Alta Precisión", tag: "Gubernamental" }, //[cite: 1]
+
+  // --- INDUSTRIAL, SALUD & LOGÍSTICA ---
+  { name: "DP-World / Marítima Dominicana / Terminal de Haina", category: "industrial", services: "Instalaciones Eléctricas Industriales y A/C", tag: "Puertos & Logística" }, //[cite: 1]
+  { name: "Laboratorio de Referencia (Sede Principal y Sucursales)", category: "industrial", services: "Climatización Controlada y Red Eléctrica", tag: "Sector Salud" }, //[cite: 1]
+  { name: "Industria Farmacéutica del Caribe / Panicentro", category: "industrial", services: "Ventilación Industrial, Extracción y Climatización", tag: "Industria & Manufactura" }, //[cite: 1]
+  { name: "Terminal de Autobuses APTPRA (San Pedro de Macorís)", category: "industrial", services: "Aire Acondicionado e Instalaciones Eléctricas", tag: "Transporte" }, //[cite: 1]
+];
+---
+
+<section id="proyectos-historial" class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800/80 transition-colors">
+  
+  <!-- Encabezado de la Sección -->
+  <div class="text-center max-w-3xl mx-auto mb-12">
+    <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Historial de Obras</span>
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 transition-colors">
+      Proyectos Destacados y Trayectoria
+    </h2>
+    <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm leading-relaxed transition-colors">
+      Más de 40 años ejecutando soluciones electromecánicas para los sectores financiero, comercial, industrial y residencial de la República Dominicana.
+    </p>
+  </div>
+
+  <!-- Métricas Rápidas -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 text-center">
+    <div class="p-4 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+      <span class="block text-2xl font-black text-blue-600 dark:text-blue-400">+100</span>
+      <span class="text-xs text-slate-600 dark:text-slate-400 font-medium">Obras Completadas</span>
+    </div>
+    <div class="p-4 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+      <span class="block text-2xl font-black text-blue-600 dark:text-blue-400">+25</span>
+      <span class="text-xs text-slate-600 dark:text-slate-400 font-medium">Sucursales Bancarias</span>
+    </div>
+    <div class="p-4 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+      <span class="block text-2xl font-black text-blue-600 dark:text-blue-400">+15</span>
+      <span class="text-xs text-slate-600 dark:text-slate-400 font-medium">Torres Residenciales</span>
+    </div>
+    <div class="p-4 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+      <span class="block text-2xl font-black text-blue-600 dark:text-blue-400">1983</span>
+      <span class="text-xs text-slate-600 dark:text-slate-400 font-medium">Fundación en Santo Domingo</span>
+    </div>
+  </div>
+
+  <!-- Controles de Filtrado y Búsqueda -->
+  <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+    
+    <!-- Botones de Categorías -->
+    <div class="flex flex-wrap justify-center gap-2" id="filter-buttons">
+      <button data-category="all" class="filter-btn active-filter px-4 py-2 rounded-xl text-xs font-semibold bg-blue-600 text-white transition-colors">Todos</button>
+      <button data-category="torres" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">Torres & Sótanos</button>
+      <button data-category="banca" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">Banca & Corporativo</button>
+      <button data-category="retail" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">Retail & Plazas</button>
+      <button data-category="institucional" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">Institucional</button>
+      <button data-category="industrial" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">Industria & Salud</button>
+    </div>
+
+    <!-- Buscador de Proyectos -->
+    <div class="w-full md:w-64">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Buscar obra o cliente..."
+        class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl px-4 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-colors"
+      />
+    </div>
+
+  </div>
+
+  <!-- Rejilla de Tarjetas de Proyectos -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+    {projects.map((p) => (
+      <div 
+        class="project-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm dark:shadow-none hover:border-blue-500/50 transition-all flex flex-col justify-between"
+        data-category={p.category}
+        data-name={p.name.toLowerCase()}
+      >
+        <div>
+          <span class="text-[10px] uppercase font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 px-2.5 py-1 rounded-full inline-block mb-3">
+            {p.tag}
+          </span>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white transition-colors">
+            {p.name}
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+            {p.services}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+</section>
+
+<!-- Script Cliente para Filtrado y Búsqueda Interactiva -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+    const searchInput = document.getElementById('search-input') as HTMLInputElement;
+
+    let currentCategory = 'all';
+
+    function filterProjects() {
+      const query = searchInput?.value.toLowerCase().trim() || '';
+
+      cards.forEach((card) => {
+        const htmlCard = card as HTMLElement;
+        const categoryMatch = currentCategory === 'all' || htmlCard.dataset.category === currentCategory;
+        const textMatch = htmlCard.dataset.name?.includes(query);
+
+        if (categoryMatch && textMatch) {
+          htmlCard.style.display = 'flex';
+        } else {
+          htmlCard.style.display = 'none';
+        }
+      });
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        buttons.forEach((b) => {
+          b.classList.remove('bg-blue-600', 'text-white', 'active-filter');
+          b.classList.add('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+        });
+
+        btn.classList.remove('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+        btn.classList.add('bg-blue-600', 'text-white', 'active-filter');
+
+        currentCategory = (btn as HTMLElement).dataset.category || 'all';
+        filterProjects();
+      });
+    });
+
+    searchInput?.addEventListener('input', filterProjects);
+  });
+</script>
