@@ -1,33 +1,63 @@
----
-const base = import.meta.env.BASE_URL;
-const formatPath = (path) => `${base.replace(/\/$/, '')}${path}`;
-
-const projectImages = [
-  {
-    title: "Diseño e Instalación de Iluminación LED Comercial",
-    category: "Iluminación & Eficiencia",
-    description: "Proyecto de iluminación de alta potencia y bajo consumo para espacios comerciales e industriales.",
-    imageSrc: formatPath("/images/luces.jpg")
-  },
-  {
-    title: "Acabados Eléctricos y Control Lumínico",
-    category: "Especialidades Eléctricas",
-    description: "Detalle de instalación arquitectónica y distribución de puntos de luz en proyecto corporativo.",
-    imageSrc: formatPath("/images/luces-1.jpg")
-  }
-];
----
-
 <section id="proyectos-galeria" class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800/80 transition-colors">
   <div class="text-center max-w-2xl mx-auto mb-16">
-    <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Galería Fotográfica</span>
-    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl mt-2 transition-colors">Proyectos de Iluminación y Diseño</h2>
-    <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm transition-colors">Inspección visual de acabados técnicos e instalaciones lumínicas de alta eficiencia.</p>
+    <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Galería de Proyectos</span>
+    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl mt-2 transition-colors">Obras Destacadas e Instalaciones</h2>
+    <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm transition-colors">Inspección visual de nuestros proyectos de climatización, ventilación mecánica, ductería e iluminación de alta eficiencia.</p>
   </div>
 
   <div class="grid md:grid-cols-2 gap-8">
-    {projectImages.map((img) => (
-      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/50 shadow-sm dark:shadow-none transition duration-300">
+    {[
+      {
+        title: "Palacio del Congreso Nacional",
+        category: "Climatización Institucional",
+        description: "Suministro e instalación de sistemas de aire acondicionado de alta capacidad para garantizar el confort térmico y la eficiencia operativa en espacios gubernamentales.",
+        imageSrc: `${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/Palacio_del_Congreso_Nacional_Santo_Domingo.jpg`
+      },
+      {
+        title: "Torre Piantini",
+        category: "Climatización Corporativa",
+        description: "Implementación integral de sistemas de aire acondicionado de alta eficiencia, diseñados para satisfacer las demandas térmicas de edificaciones empresariales de alto nivel.",
+        imageSrc: `${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/torre-piantini.jpeg`
+      },
+      {
+        title: "Edificio Corporativo BDP",
+        category: "Ingeniería Electromecánica",
+        description: "Ejecución de soluciones técnicas de climatización y acondicionamiento ambiental adaptadas a los estándares de infraestructura corporativa moderna.",
+        imageSrc: `${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/Fachada-BDP.jpg`
+      },
+      {
+        title: "Civic Tower 4",
+        category: "HVAC & Ventilación Mecánica",
+        description: "Desarrollo integral de climatización mediante sistemas de aire acondicionado, fabricación e instalación de ductería especializada y sistemas de extracción de aire.",
+        imageSrc: `${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/civil-tower-4.jpeg`
+      },
+      {
+        title: "Civic Tower Ocean",
+        category: "Climatización & Sistemas Especiales",
+        description: "Instalación de equipamiento de aire acondicionado e integración de ductos verticales para el manejo de residuos (ducto de basura) bajo normativas de edificación residencial.",
+        imageSrc: `${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/civil-tower-oceance.jpeg`
+      },
+      {
+        title: "Civic Tower 3",
+        category: "Climatización Residencial",
+        description: "Ejecución de proyecto de climatización y distribución de aire acondicionado para unidades residenciales y áreas sociales de la torre.",
+        imageSrc: `${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/civic-tower-3-santo-domingo-pic-34.jpeg`
+      },
+{
+        title: "Diseño e Instalación de Iluminación LED Comercial",
+        category: "Iluminación & Eficiencia",
+        description: "Proyecto de iluminación de alta potencia y bajo consumo para espacios comerciales e industriales.",
+        imageSrc: `${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/luces.jpeg`,
+        position: "object-top" // <-- Aplica el enfoque superior
+      },
+      {
+        title: "Acabados Eléctricos y Control Lumínico",
+        category: "Especialidades Eléctricas",
+        description: "Detalle de instalación arquitectónica y distribución de puntos de luz en proyecto corporativo.",
+        imageSrc: `${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/luces-1.jpg`
+      }
+    ].map((img) => (
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/50 shadow-sm dark:shadow-none transition duration-300 flex flex-col">
         <div class="relative aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-950">
           <img
             src={img.imageSrc}
@@ -36,12 +66,14 @@ const projectImages = [
             class="w-full h-full object-cover hover:scale-105 transition duration-500"
           />
         </div>
-        <div class="p-6">
-          <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 px-3 py-1 rounded-full transition-colors inline-block">
-            {img.category}
-          </span>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-4 transition-colors">{img.title}</h3>
-          <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm leading-relaxed transition-colors">{img.description}</p>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 px-3 py-1 rounded-full transition-colors inline-block">
+              {img.category}
+            </span>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-4 transition-colors">{img.title}</h3>
+            <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm leading-relaxed transition-colors">{img.description}</p>
+          </div>
         </div>
       </div>
     ))}
