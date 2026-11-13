@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const directores = [
+  {
+    cargo: 'Socio Fundador',
+    area: 'Fundación y trayectoria',
+    foto: '/images/directores/socio-fundador.jpg',
+    ancho: 995,
+    alto: 1280,
+  },
+  {
+    cargo: 'Socio y Encargado de Ventas',
+    area: 'Gestión comercial',
+    foto: '/images/directores/socio-ventas.jpg',
+    ancho: 959,
+    alto: 1280,
+  },
+];
+---
+
+<BaseLayout
+  title="Directores | RIISA"
+  description="Conoce a los directores de RIISA: nuestro Socio Fundador y nuestro Socio y Encargado de Ventas."
+>
+  <section class="relative overflow-hidden border-b border-slate-200 dark:border-slate-800 px-6 py-16 sm:py-24">
+    <div aria-hidden="true" class="absolute right-0 top-0 h-80 w-80 rounded-full bg-blue-600/10 blur-3xl pointer-events-none"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <a href="/" class="text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"><span aria-hidden="true">←</span> Volver al inicio</a>
+      <p class="mt-10 text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Nuestro equipo directivo</p>
+      <h1 class="mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">Directores</h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">Las personas al frente de RIISA, una empresa con más de cuatro décadas de trayectoria en soluciones de ingeniería e instalaciones electromecánicas.</p>
+    </div>
+  </section>
+
+  <section aria-label="Directores de RIISA" class="max-w-5xl mx-auto px-6 py-16 sm:py-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
+      {directores.map((director, index) => (
+        <article class="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 shadow-xl dark:shadow-none">
+          <div class="aspect-[4/5] overflow-hidden bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-800">
+            <img
+              src={director.foto}
+              alt={`Retrato del ${director.cargo} de RIISA`}
+              width={director.ancho}
+              height={director.alto}
+              class:list={['h-full w-full object-cover', { 'retrato-ventas': index === 1 }]}
+            />
+          </div>
+          <div class="p-7 sm:p-8">
+            <p class="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest">{director.area}</p>
+            <h2 class="mt-3 text-2xl font-bold text-slate-900 dark:text-white">{director.cargo}</h2>
+            <div aria-hidden="true" class="mt-6 h-1 w-12 rounded-full bg-blue-600"></div>
+          </div>
+        </article>
+      ))}
+    </div>
+    <div class="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-3xl border border-blue-200 dark:border-slate-800 bg-blue-50 dark:bg-slate-900 p-8">
+      <div>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Conversemos sobre tu proyecto</h2>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Contacta con nuestro equipo para conocer nuestras soluciones.</p>
+      </div>
+      <a href="/#contacto" class="shrink-0 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition shadow-md shadow-blue-600/20">Contactar a RIISA <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .retrato-ventas {
+    transform: scale(1.45);
+    transform-origin: 42% 82%;
+  }
+</style>

@@ -17,6 +17,8 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=riisa" />
+    <link rel="alternate icon" href="/favicon.ico?v=riisa" sizes="64x64" />
     <title>{title}</title>
     <meta name="description" content={description} />
 
@@ -57,11 +59,12 @@ const {
         </a>
 
         <!-- Navigation Links -->
-        <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-700 dark:text-slate-300">
-          <a href="#nosotros" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Nosotros</a>
-          <a href="#servicios" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Servicios</a>
-          <a href="#proyectos-historial" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Proyectos</a>
-          <a href="#contacto" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contacto</a>
+        <nav class="hidden md:flex space-x-6 text-sm font-semibold text-slate-700 dark:text-slate-300">
+          <a href="/#nosotros" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Nosotros</a>
+          <a href="/#servicios" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Servicios</a>
+          <a href="/#proyectos-historial" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Proyectos</a>
+          <a href="/#contacto" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contacto</a>
+          <a href="/directores/" aria-current={Astro.url.pathname.startsWith('/directores') ? 'page' : undefined} class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors aria-[current=page]:text-blue-600 dark:aria-[current=page]:text-blue-400">Directores</a>
         </nav>
 
         <div class="flex items-center gap-4">
@@ -83,11 +86,18 @@ const {
           </button>
 
           <!-- Action Button -->
-          <a href="#contacto" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition shadow-md shadow-blue-600/20">
+          <a href="/#contacto" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition shadow-md shadow-blue-600/20">
             Cotizar Proyecto
           </a>
         </div>
       </div>
+      <nav aria-label="Navegación móvil" class="md:hidden flex gap-5 overflow-x-auto px-6 py-3 border-t border-slate-200 dark:border-slate-800 text-sm font-semibold">
+        <a href="/#nosotros" class="shrink-0 hover:text-blue-600">Nosotros</a>
+        <a href="/#servicios" class="shrink-0 hover:text-blue-600">Servicios</a>
+        <a href="/#proyectos-historial" class="shrink-0 hover:text-blue-600">Proyectos</a>
+        <a href="/directores/" aria-current={Astro.url.pathname.startsWith('/directores') ? 'page' : undefined} class="shrink-0 hover:text-blue-600 aria-[current=page]:text-blue-600 dark:aria-[current=page]:text-blue-400">Directores</a>
+        <a href="/#contacto" class="shrink-0 hover:text-blue-600">Contacto</a>
+      </nav>
     </header>
 
     <!-- Main Content -->
